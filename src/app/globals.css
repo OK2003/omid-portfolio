@@ -1,26 +1,144 @@
-@import "tailwindcss";
+﻿@import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-background: hsl(0 0% 100%);
+  --color-foreground: hsl(222 47% 11%);
+  --color-primary: hsl(217 91% 60%);
+  --color-primary-foreground: hsl(0 0% 100%);
+  --color-muted: hsl(210 40% 96%);
+  --color-muted-foreground: hsl(215 16% 47%);
+  --color-border: hsl(214 32% 91%);
+  --color-card: hsl(0 0% 100%);
+  --color-card-foreground: hsl(222 47% 11%);
+  --color-accent: hsl(217 91% 60%);
+  --color-accent-foreground: hsl(0 0% 100%);
+
+  --radius-lg: 12px;
+  --radius-md: 8px;
+  --radius-sm: 6px;
+
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+.dark {
+  --color-background: hsl(222 47% 7%);
+  --color-foreground: hsl(210 40% 98%);
+  --color-primary: hsl(217 91% 60%);
+  --color-primary-foreground: hsl(0 0% 100%);
+  --color-muted: hsl(217 33% 14%);
+  --color-muted-foreground: hsl(215 20% 65%);
+  --color-border: hsl(217 33% 18%);
+  --color-card: hsl(222 47% 9%);
+  --color-card-foreground: hsl(210 40% 98%);
+  --color-accent: hsl(217 91% 60%);
+  --color-accent-foreground: hsl(0 0% 100%);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  border-color: hsl(var(--color-border));
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+}
+
+.about-guardian-section { position: relative; overflow: hidden; background: radial-gradient(circle at 78% 36%, hsl(39 88% 49% / 0.16), transparent 25rem), radial-gradient(circle at 10% 5%, hsl(217 91% 60% / 0.13), transparent 28rem), linear-gradient(135deg, hsl(222 47% 5%), hsl(222 45% 8%) 52%, hsl(30 42% 8%)); }
+.about-guardian-section::before { position: absolute; inset: 0; background-image: linear-gradient(hsl(45 80% 70% / 0.035) 1px, transparent 1px), linear-gradient(90deg, hsl(45 80% 70% / 0.035) 1px, transparent 1px); background-size: 42px 42px; content: ""; mask-image: linear-gradient(to bottom, transparent, black 18%, black 82%, transparent); }
+.about-guardian-grid { position: relative; display: flex; flex-direction: column; gap: 3rem; }
+.about-copy { max-width: 46rem; }
+.about-eyebrow, .guardian-caption { color: hsl(43 91% 66%); font-family: var(--font-mono); font-size: 0.7rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
+.about-title { max-width: 11ch; margin-top: 0.9rem; color: hsl(42 96% 86%); font-size: clamp(2.6rem, 7vw, 5.6rem); font-weight: 700; letter-spacing: -0.065em; line-height: 0.95; text-wrap: balance; }
+.about-description { max-width: 46rem; margin-top: 1.75rem; color: hsl(215 20% 76%); font-size: 1rem; line-height: 1.8; }
+.about-description p + p { margin-top: 1rem; }
+.about-signature { color: hsl(43 91% 66%); font-family: var(--font-mono); font-size: 0.78rem; font-weight: 700; letter-spacing: 0.16em; }
+.about-divider { width: 5rem; height: 1px; margin: 2rem 0; background: linear-gradient(90deg, hsl(43 91% 60%), transparent); }
+.about-interests-title { color: hsl(210 40% 98%); font-size: 1.1rem; font-weight: 600; }
+.about-interests { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.75rem 1.25rem; margin-top: 1rem; }
+.about-interest { display: flex; align-items: center; gap: 0.6rem; color: hsl(215 20% 72%); font-size: 0.84rem; }
+.about-interest span { width: 0.35rem; height: 0.35rem; border-radius: 999px; background: hsl(43 91% 61%); box-shadow: 0 0 12px hsl(43 91% 61% / 0.75); }
+.guardian-stage { position: relative; width: 100%; isolation: isolate; }
+.guardian-frame { position: relative; overflow: hidden; border: 1px solid hsl(43 87% 60% / 0.45); border-radius: 1.2rem; background: hsl(30 20% 5%); box-shadow: 0 26px 80px hsl(0 0% 0% / 0.55), inset 0 0 0 1px hsl(43 90% 80% / 0.08); }
+.guardian-frame::before { position: absolute; z-index: 2; inset: 0; border: 1px solid hsl(43 90% 80% / 0.12); border-radius: inherit; content: ""; pointer-events: none; }
+.guardian-video { display: block; width: 100%; max-height: min(68vh, 48rem); aspect-ratio: 16 / 9; object-fit: cover; filter: saturate(1.07) contrast(1.04); }
+.guardian-caption { margin-top: 1rem; text-align: right; opacity: 0.8; }
+.guardian-aura { position: absolute; z-index: -1; border-radius: 999px; filter: blur(18px); }
+.guardian-aura-one { top: 14%; right: 5%; width: 12rem; height: 12rem; background: hsl(42 92% 54% / 0.24); }
+.guardian-aura-two { bottom: 5%; left: 8%; width: 9rem; height: 9rem; background: hsl(217 91% 60% / 0.16); }
+
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+@keyframes glow-fade {
+  0% {
+    opacity: 0;
+    transform: translateY(8px) scale(0.98);
+    filter: blur(6px);
+  }
+  20% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+  70% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-8px) scale(1.02);
+    filter: blur(6px);
+  }
+}
+
+@keyframes glow-pulse {
+  0%,
+  100% {
+    text-shadow:
+      0 0 8px hsl(217 91% 60% / 0.55),
+      0 0 20px hsl(217 91% 60% / 0.35),
+      0 0 42px hsl(217 91% 60% / 0.2);
+  }
+  50% {
+    text-shadow:
+      0 0 14px hsl(217 91% 60% / 0.85),
+      0 0 34px hsl(217 91% 60% / 0.55),
+      0 0 70px hsl(217 91% 60% / 0.35);
+  }
+}
+
+.glow-text {
+  background: linear-gradient(
+    90deg,
+    hsl(217 91% 72%),
+    hsl(199 95% 74%),
+    hsl(262 83% 78%),
+    hsl(217 91% 72%)
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation:
+    glow-fade 4.5s ease-in-out infinite,
+    glow-pulse 2.4s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .glow-text,
+  .guardian-aura {
+    animation: none;
+    opacity: 1;
+    filter: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-interests {
+    grid-template-columns: 1fr;
+  }
 }
