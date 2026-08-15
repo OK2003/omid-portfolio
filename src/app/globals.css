@@ -67,6 +67,21 @@ body {
 .guardian-aura-one { top: 14%; right: 5%; width: 12rem; height: 12rem; background: hsl(42 92% 54% / 0.24); }
 .guardian-aura-two { bottom: 5%; left: 8%; width: 9rem; height: 9rem; background: hsl(217 91% 60% / 0.16); }
 
+@keyframes rise-in {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.hero-reveal, .page-transition, .project-card-reveal {
+  animation: rise-in 0.45s ease-out both;
+}
+
+.project-card-reveal:nth-child(2) { animation-delay: 80ms; }
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-reveal, .page-transition, .project-card-reveal { animation: none; }
+}
+
 :focus-visible {
   outline: 2px solid var(--color-primary);
   outline-offset: 2px;

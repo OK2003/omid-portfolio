@@ -11,7 +11,7 @@ export function buildPersonJsonLd() {
     url: SITE_CONFIG.url,
     jobTitle: "Petroleum Engineer & Software Developer",
     description: SITE_CONFIG.description,
-    image: `${SITE_CONFIG.url}/images/profile.jpg`,
+    image: `${SITE_CONFIG.url}/images/profile.optimized.jpg`,
     email: SITE_CONFIG.links.email,
     sameAs: [
       SITE_CONFIG.links.instagram,

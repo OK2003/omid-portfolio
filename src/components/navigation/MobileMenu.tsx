@@ -3,8 +3,8 @@
 import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { CloseIcon, MenuIcon } from "@/components/ui/icons";
 import { NAV_ITEMS } from "@/constants/routes";
 import { cn } from "@/lib/utils";
 
@@ -23,9 +23,9 @@ export function MobileMenu() {
         aria-label={isOpen ? "Close menu" : "Open menu"}
       >
         {isOpen ? (
-          <X className="h-5 w-5" aria-hidden="true" />
+          <CloseIcon className="h-5 w-5" />
         ) : (
-          <Menu className="h-5 w-5" aria-hidden="true" />
+          <MenuIcon className="h-5 w-5" />
         )}
       </Button>
 

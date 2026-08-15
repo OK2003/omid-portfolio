@@ -1,3 +1,5 @@
+import { GuardianVideo } from "@/components/sections/GuardianVideo";
+
 const INTERESTS = [
   "Drilling Engineering",
   "Well Hydraulics",
@@ -16,18 +18,7 @@ export function AboutSection() {
             <div className="guardian-aura guardian-aura-one" aria-hidden="true" />
             <div className="guardian-aura guardian-aura-two" aria-hidden="true" />
             <div className="guardian-frame">
-              <video
-                className="guardian-video"
-                autoPlay
-                loop
-                muted
-                playsInline
-                preload="metadata"
-                poster="/images/guardian-of-iran.png"
-                aria-label="Animated golden winged guardian standing before the map of Iran"
-              >
-                <source src="/videos/guardian-of-iran.mp4" type="video/mp4" />
-              </video>
+              <GuardianVideo />
             </div>
             <p className="guardian-caption">Guardian of Iran</p>
           </div>
