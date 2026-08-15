@@ -1,29 +1,21 @@
 ﻿import type {
   ContactFormData,
   ContactSubmissionResult,
-  ContactApiResponse,
 } from "@/types/contact";
+import { SITE_CONFIG } from "@/constants/site";
 
 export async function submitContactForm(
   data: ContactFormData
 ): Promise<ContactSubmissionResult> {
-  try {
-    const response = await fetch("/api/contact", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(data),
-    });
+  const subject = encodeURIComponent(data.subject);
+  const body = encodeURIComponent(
+    `Name: ${data.name}\nEmail: ${data.email}\n\n${data.message}`
+  );
 
-    const body = (await response.json()) as ContactApiResponse;
+  window.location.href = `mailto:${SITE_CONFIG.links.email}?subject=${subject}&body=${body}`;
 
-    return {
-      success: body.success,
-      message: body.message,
-    };
-  } catch {
-    return {
-      success: false,
-      message: "Network error. Please check your connection and try again.",
-    };
-  }
+  return {
+    success: true,
+    message: "Your email client has been opened with the message ready to send.",
+  };
 }

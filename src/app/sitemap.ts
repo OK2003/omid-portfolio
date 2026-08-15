@@ -2,6 +2,8 @@
 import { SITE_CONFIG } from "@/constants/site";
 import { getAllArticles } from "@/lib/content/article-loader";
 
+export const dynamic = "force-static";
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = SITE_CONFIG.url;
 
