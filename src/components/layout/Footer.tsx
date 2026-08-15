@@ -5,11 +5,11 @@ export function Footer() {
 
   return (
     <footer className="border-t border-border">
-      <div className="mx-auto flex max-w-5xl flex-col items-center gap-2 px-4 py-8 text-center text-sm text-muted-foreground md:flex-row md:justify-between">
+      <div className="mx-auto flex max-w-5xl flex-col items-center gap-3 px-3 py-8 text-center text-sm text-muted-foreground sm:px-4 md:flex-row md:justify-between">
         <p>
           (c) {year} {SITE_CONFIG.name}. All rights reserved.
         </p>
-        <div className="flex gap-4">
+        <div className="flex flex-wrap justify-center gap-x-4 gap-y-2">
           <a
             href={SITE_CONFIG.links.instagram}
             target="_blank"

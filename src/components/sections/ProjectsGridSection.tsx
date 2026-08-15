@@ -34,7 +34,10 @@ export function ProjectsGridSection({ projects }: { projects: Project[] }) {
             size="sm"
             aria-pressed={activeFilter === category}
             onClick={() => setActiveFilter(category)}
-            className={cn(category === "all" && "capitalize")}
+            className={cn(
+              "min-w-0 flex-1 whitespace-normal sm:flex-none",
+              category === "all" && "capitalize"
+            )}
           >
             {category === "all" ? "All" : category}
           </Button>

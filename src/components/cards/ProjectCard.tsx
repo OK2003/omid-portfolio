@@ -13,9 +13,9 @@ export function ProjectCard({ project }: { project: Project }) {
   return (
     <Card className="flex h-full flex-col">
       <CardHeader>
-        <div className="flex items-center justify-between gap-2">
-          <CardTitle>{project.name}</CardTitle>
-          <Badge>{STATUS_LABELS[project.status]}</Badge>
+        <div className="flex flex-wrap items-start justify-between gap-2">
+          <CardTitle className="min-w-0 flex-1 break-words">{project.name}</CardTitle>
+          <Badge className="shrink-0">{STATUS_LABELS[project.status]}</Badge>
         </div>
       </CardHeader>
       <CardContent className="flex flex-1 flex-col gap-4">

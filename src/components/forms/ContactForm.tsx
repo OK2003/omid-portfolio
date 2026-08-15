@@ -60,7 +60,7 @@ export function ContactForm() {
         />
       </FormField>
 
-      <Button type="submit" disabled={isSubmitting}>
+      <Button type="submit" disabled={isSubmitting} className="w-full sm:w-fit">
         {isSubmitting ? "Sending..." : "Send message"}
       </Button>
 

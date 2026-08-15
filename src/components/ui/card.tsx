@@ -17,14 +17,14 @@ export function CardHeader({
   className,
   ...props
 }: HTMLAttributes<HTMLDivElement>) {
-  return <div className={cn("p-6 pb-2", className)} {...props} />;
+  return <div className={cn("p-4 pb-2 sm:p-6 sm:pb-2", className)} {...props} />;
 }
 
 export function CardContent({
   className,
   ...props
 }: HTMLAttributes<HTMLDivElement>) {
-  return <div className={cn("p-6 pt-0", className)} {...props} />;
+  return <div className={cn("p-4 pt-0 sm:p-6 sm:pt-0", className)} {...props} />;
 }
 
 export function CardTitle({

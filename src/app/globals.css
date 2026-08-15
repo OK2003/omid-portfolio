@@ -42,6 +42,19 @@
 body {
   background-color: var(--color-background);
   color: var(--color-foreground);
+  min-width: 320px;
+  overflow-x: hidden;
+}
+
+html {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+img,
+video,
+svg {
+  max-width: 100%;
 }
 
 .about-guardian-section { position: relative; overflow: hidden; background: radial-gradient(circle at 78% 36%, hsl(39 88% 49% / 0.16), transparent 25rem), radial-gradient(circle at 10% 5%, hsl(217 91% 60% / 0.13), transparent 28rem), linear-gradient(135deg, hsl(222 47% 5%), hsl(222 45% 8%) 52%, hsl(30 42% 8%)); }
@@ -155,5 +168,37 @@ body {
 @media (max-width: 480px) {
   .about-interests {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  button,
+  [role="button"] {
+    min-height: 44px;
+  }
+
+  .about-guardian-grid {
+    gap: 2.25rem;
+  }
+
+  .about-description {
+    font-size: 0.95rem;
+    line-height: 1.75;
+    overflow-wrap: anywhere;
+  }
+
+  .about-signature {
+    font-size: 0.68rem;
+    letter-spacing: 0.11em;
+    overflow-wrap: anywhere;
+  }
+
+  .guardian-frame {
+    border-radius: 0.9rem;
+  }
+
+  .guardian-aura {
+    filter: blur(12px);
+    transform: scale(0.72);
   }
 }
