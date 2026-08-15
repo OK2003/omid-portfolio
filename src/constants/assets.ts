@@ -1,6 +1,5 @@
-const GITHUB_PAGES_BASE_PATH =
-  process.env.GITHUB_ACTIONS === "true" ? "/omid-portfolio" : "";
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
 export function assetPath(path: string): string {
-  return `${GITHUB_PAGES_BASE_PATH}/${path.replace(/^\/+/, "")}`;
+  return `${basePath}/${path.replace(/^\/+/, "")}`;
 }
