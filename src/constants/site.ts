@@ -4,7 +4,7 @@
   description:
     "Omid Reza KeyShams (امیدرضا کی شمس) — Petroleum engineering graduate, software developer, and AI engineering systems designer. Building reliable engineering software for drilling operations and beyond. مهندس نفت و توسعه‌دهنده نرم‌افزار.",
   url: "https://omidkeyshams.dev",
-  ogImage: "/images/og-image.png",
+  ogImage: "/images/profile.optimized.jpg",
   links: {
     instagram: "https://instagram.com/rezakeyshamsss",
     linkedin: "https://linkedin.com/in/omidreza-keyshams",

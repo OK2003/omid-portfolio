@@ -6,13 +6,14 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { SITE_CONFIG } from "@/constants/site";
 import { ROUTES } from "@/constants/routes";
+import { assetPath } from "@/constants/assets";
 
 export function HeroSection() {
   return (
     <section className="mx-auto flex max-w-3xl flex-col items-center gap-6 px-3 py-16 text-center sm:px-4 sm:py-24">
       <div className="hero-reveal relative h-28 w-28 overflow-hidden rounded-full border-4 border-primary/20 shadow-lg sm:h-32 sm:w-32 md:h-40 md:w-40">
         <Image
-          src="/images/profile.optimized.jpg"
+          src={assetPath("images/profile.optimized.jpg")}
           alt={SITE_CONFIG.name}
           fill
           className="object-cover"

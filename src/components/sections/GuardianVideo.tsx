@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { assetPath } from "@/constants/assets";
 
 export function GuardianVideo() {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -39,10 +40,12 @@ export function GuardianVideo() {
       muted
       playsInline
       preload={isReady ? "metadata" : "none"}
-      poster="/images/guardian-of-iran.webp"
+      poster={assetPath("images/guardian-of-iran.webp")}
       aria-label="Animated golden winged guardian standing before the map of Iran"
     >
-      {isReady && <source src="/videos/guardian-of-iran-lite.mp4" type="video/mp4" />}
+      {isReady && (
+        <source src={assetPath("videos/guardian-of-iran-lite.mp4")} type="video/mp4" />
+      )}
     </video>
   );
 }
