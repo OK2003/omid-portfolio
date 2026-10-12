@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
 import { assetPath } from "@/constants/assets";
 
@@ -12,7 +12,6 @@ export function HeroGreeting() {
   const stageRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const [isPlaying, setIsPlaying] = useState(false);
   const pathname = usePathname();
 
   useEffect(() => {
@@ -122,16 +121,6 @@ export function HeroGreeting() {
     };
   }, [pathname]);
 
-  const togglePlayback = () => {
-    const video = videoRef.current;
-    if (!video) return;
-    if (!video.paused) video.pause();
-    else {
-      video.currentTime = 0;
-      void video.play().catch(() => {});
-    }
-  };
-
   return (
     <div className="hero-greeting" ref={stageRef}>
       <div className="hero-greeting-glow" aria-hidden="true" />
@@ -162,16 +151,7 @@ export function HeroGreeting() {
         preload="auto"
         className="hidden"
         aria-hidden="true"
-        onPlay={() => setIsPlaying(true)}
-        onPause={() => setIsPlaying(false)}
-        onEnded={() => setIsPlaying(false)}
       />
-      <button type="button" className="hero-greeting-control" onClick={togglePlayback} aria-label={isPlaying ? "Pause greeting" : "Replay greeting"}>
-        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
-          {isPlaying ? <path d="M9 6v12M15 6v12" /> : <><path d="M4 10a8 8 0 1 1 1 8" /><path d="M4 4v6h6" /></>}
-        </svg>
-        <span>{isPlaying ? "Pause" : "Say hello again"}</span>
-      </button>
     </div>
   );
 }

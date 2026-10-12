@@ -24,7 +24,7 @@ This project uses [`next/font`](https://nextjs.org/docs/app/building-your-applic
 
 The homepage uses a transparent portrait with one-shot playback when it enters
 the viewport, including route returns and scrolling back up. Reduced-motion
-preferences disable automatic playback; the greeting can still be played manually.
+preferences disable automatic playback.
 
 To regenerate the optimized media, install FFmpeg and run:
 
