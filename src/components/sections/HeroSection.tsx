@@ -1,26 +1,16 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { SITE_CONFIG } from "@/constants/site";
 import { ROUTES } from "@/constants/routes";
-import { assetPath } from "@/constants/assets";
+import { HeroGreeting } from "@/components/sections/HeroGreeting";
 
 export function HeroSection() {
   return (
-    <section className="mx-auto flex max-w-3xl flex-col items-center gap-6 px-3 py-16 text-center sm:px-4 sm:py-24">
-      <div className="hero-reveal relative h-28 w-28 overflow-hidden rounded-full border-4 border-primary/20 shadow-lg sm:h-32 sm:w-32 md:h-40 md:w-40">
-        <Image
-          src={assetPath("images/profile.optimized.jpg")}
-          alt={SITE_CONFIG.name}
-          fill
-          className="object-cover"
-          priority
-          sizes="(max-width: 640px) 112px, (max-width: 768px) 128px, 160px"
-        />
-      </div>
+    <section className="mx-auto flex max-w-3xl flex-col items-center gap-6 px-3 pb-16 pt-8 text-center sm:px-4 sm:pb-24 sm:pt-10">
+      <HeroGreeting />
 
       <h1 className="hero-reveal text-3xl font-semibold tracking-tight sm:text-4xl md:text-5xl" style={{ animationDelay: "50ms" }}>
         {SITE_CONFIG.name}

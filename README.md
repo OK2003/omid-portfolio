@@ -20,6 +20,23 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
+## Homepage greeting video
+
+The homepage uses a transparent portrait with one-shot playback when it enters
+the viewport, including route returns and scrolling back up. Reduced-motion
+preferences disable automatic playback; the greeting can still be played manually.
+
+To regenerate the optimized media, install FFmpeg and run:
+
+```bash
+node scripts/prepare-hero-video.mjs "path/to/source.mp4"
+```
+
+The script removes the edge-connected neutral background while preserving the
+portrait, then stores color and alpha vertically in a standard H.264 MP4. The
+homepage composites them on a transparent canvas for browser compatibility.
+It also generates a transparent WebP poster for loading and fallback states.
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
