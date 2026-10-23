@@ -56,7 +56,7 @@ export function buildMetadata({
       "AI Engineering Systems",
       "مهندس نفت",
       "مهندس حفاری",
-      "EDi Drilling Engineering",
+      "EDi — Engineering Drilling Innovation",
       "Well Hydraulics",
     ],
   };

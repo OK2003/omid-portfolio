@@ -4,6 +4,7 @@ import { FeaturedProjectsSection } from "@/components/sections/FeaturedProjectsS
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata = buildMetadata({
+  title: "EDi — Engineering Drilling Innovation",
   path: "/",
 });
 

@@ -15,15 +15,15 @@ export const experiences: Experience[] = [
   {
     id: "exp-edi",
     type: "project",
-    title: "EDi - Drilling Engineering Application",
+    title: "EDi — Engineering Drilling Innovation",
     organization: "Independent Project",
     startDate: "2025",
     description:
-      "Designing and developing a competitive drilling engineering desktop application, including hydraulics and well planning modules.",
+      "Developing EDi (Engineering Drilling Innovation), a professional platform for hydraulics, well engineering and control, planning, operations, utilities, AI advisory, and reporting. Designed as a fast, readable industrial workstation with modular workflows, traceable results, testable calculations, offline capability, and project-based organization.",
     highlights: [
-      "Hydraulics module with multiple rheology models",
-      "UI/UX redesign across multiple iterations",
-      "Competitive positioning against industry tools",
+      "In development: modular workflows for hydraulics, well engineering and control, planning, and operations",
+      "Development goals: traceable results, testable calculations, and a fast, readable industrial workstation",
+      "Planned capabilities: utilities, AI advisory, reporting, offline use, and project-based organization",
     ],
   },
 ];

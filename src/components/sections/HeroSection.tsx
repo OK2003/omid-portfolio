@@ -27,9 +27,6 @@ export function HeroSection() {
       </p>
 
       <div className="hero-reveal flex w-full max-w-sm flex-col items-stretch justify-center gap-3 sm:w-auto sm:max-w-none sm:flex-row sm:items-center" style={{ animationDelay: "200ms" }}>
-        <Button asChild className="w-full sm:w-auto">
-          <Link href={ROUTES.projects}>View Projects</Link>
-        </Button>
         <Button asChild variant="outline" className="w-full sm:w-auto">
           <Link href={ROUTES.resume}>Download Resume</Link>
         </Button>

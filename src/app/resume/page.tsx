@@ -3,6 +3,7 @@ import { skills } from "@/data/skills";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { buildMetadata } from "@/lib/seo";
+import { assetPath } from "@/constants/assets";
 
 export const metadata = buildMetadata({
   title: "Resume",
@@ -16,7 +17,7 @@ export default function ResumePage() {
       <div className="flex items-center justify-between">
         <h1 className="text-3xl font-semibold tracking-tight">Resume</h1>
         <Button asChild>
-          <a href="/resume.pdf" download>
+          <a href={assetPath("resume.pdf")} download>
             Download PDF
           </a>
         </Button>

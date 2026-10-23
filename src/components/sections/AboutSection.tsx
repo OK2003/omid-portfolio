@@ -1,4 +1,5 @@
 import { GuardianVideo } from "@/components/sections/GuardianVideo";
+import { getProjectBySlug } from "@/lib/content/project-loader";
 
 const INTERESTS = [
   "Drilling Engineering",
@@ -10,6 +11,8 @@ const INTERESTS = [
 ];
 
 export function AboutSection() {
+  const edi = getProjectBySlug("edi-drilling-engineering");
+
   return (
     <section className="about-guardian-section">
       <div className="mx-auto max-w-6xl px-4 py-16 md:py-24">
@@ -51,6 +54,11 @@ export function AboutSection() {
               <p className="about-signature">OMID REZA KEYSHAMS</p>
             </div>
 
+            <div className="about-divider" aria-hidden="true" />
+            <h2 className="about-interests-title">{edi?.name}</h2>
+            <div className="about-description">
+              <p>{edi?.longDescription}</p>
+            </div>
             <div className="about-divider" aria-hidden="true" />
             <h2 className="about-interests-title">Areas of interest</h2>
             <ul className="about-interests">
